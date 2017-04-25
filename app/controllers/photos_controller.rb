@@ -7,4 +7,11 @@ class PhotosController <ApplicationController
     @created_at =p.created_at
 render("photos/show.html.erb")
   end
+
+  def index
+    @all_photos=Photo.all
+    
+
+render("photos/photos.html.erb")
+  end
 end
