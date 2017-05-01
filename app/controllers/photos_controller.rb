@@ -37,13 +37,13 @@ def edit_form
 end
 
 def update_row
-
+@photokey = Photo.find(params[:the_id])
 p=Photo.find(params[:the_id])
 p.source= params["the_source"]
 p.caption=params["the_caption"]
 p.save
 
-redirect_to("/photos/")
+redirect_to ("/photos/#{params[:the_id]}")
 end
 
 def delete
