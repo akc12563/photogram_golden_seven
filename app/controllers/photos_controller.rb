@@ -43,6 +43,15 @@ p.source= params["the_source"]
 p.caption=params["the_caption"]
 p.save
 
+redirect_to("/photos/")
+end
+
+def delete
+p=Photo.find(params[:the_id])
+p.destroy
+p.save
+
 redirect_to("/photos")
 end
+
 end
